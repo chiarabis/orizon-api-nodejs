@@ -2,12 +2,12 @@
 
 Orizon (nome fittizio) è un'agenzia viaggi, nata per far scoprire varie tipologie di viaggi in grado di ampliare gli orizzonti. È un progetto sviluppato con Node.js per il corso di Start2Impact University.
 
-## Sviluppo 💻
+### Sviluppo 💻
 - Database in SQL con i dati riguardanti i prodotti (pacchetti di viaggio), gli utenti (i clienti) e gli ordini.
 - API JSON per gestire le richieste http.
 - Parte front end in semplice HTML e CSS.
 
-## Librerie e framework ⚙️
+### Librerie e framework ⚙️
 - Beekeeper Studio per gestire il database relazionale
 - Express.js, framework Node.js, per creare le API
 - Sequelize per semplificare l'interazione con il database
