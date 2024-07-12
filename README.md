@@ -9,5 +9,6 @@ Orizon (nome fittizio) è un'agenzia viaggi, nata per far scoprire varie tipolog
 
 ### Librerie e framework ⚙️
 - Beekeeper Studio per gestire il database relazionale
-- Express.js, framework Node.js, per creare le API
+- Express.js, framework Node.js, per creare e manipolare le API
 - Sequelize per semplificare l'interazione con il database
+- React per la parte front end
