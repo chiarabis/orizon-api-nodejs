@@ -1,15 +1,19 @@
-# Orizon: a Node.js Project
+# Orizon API: a Node.js project
+Il progetto prevede la creazione di REST API utilizzando Node.js per gestire gli utenti, i pacchetti di viaggio e i relativi ordini di un'agenzia viaggi chiamata "Orizon".
 
-Orizon (nome fittizio) è un'agenzia viaggi, nata per far scoprire varie tipologie di viaggi in grado di ampliare gli orizzonti. È un progetto sviluppato con Node.js per il corso di Start2Impact University.
-
-### Sviluppo 💻
+---
+## Sviluppo 💻
 - Database in SQL con i dati riguardanti i prodotti (pacchetti di viaggio), gli utenti (i clienti) e gli ordini.
 - API JSON per gestire le richieste http.
 - Parte front end in HTML, CSS e Javascript.
 
-### Librerie e framework ⚙️
+---
+## Librerie e tools 📚
 - Beekeeper Studio per gestire il database relazionale
 - Express.js, framework Node.js, per creare e manipolare le API
 - Sequelize per semplificare l'interazione con il database
 - Javascript
 - HTML e CSS
+
+---
+## Cofigurazione 🛠️
