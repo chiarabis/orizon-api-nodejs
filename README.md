@@ -17,3 +17,13 @@ Il progetto prevede la creazione di REST API utilizzando Node.js per gestire gli
 
 ---
 ## Cofigurazione 🛠️
+
+---
+## Struttura del progetto 🗂️
+- **/config/db.js**: contiene la configurazione della connessione a MySQL tramite Sequelize.
+- **/models**: contiene i modelli Sequelize che rappresentano le tabelle del database e le associazioni tra di essi.
+- **/controllers**: contiene i file dove viene gestita la logica applicativa delle API RESTful per le diverse entità.
+- **/public**: contiene il front-end dell'applicazione, come file HTML, CSS, immagini e JavaScript lato client.
+- **/routes**: definisce le rotte per le API RESTful.
+- **app.js**: file principale del'applicazione, dove viene configurata e avviata l'istanza di Express.
+
