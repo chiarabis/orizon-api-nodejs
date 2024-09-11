@@ -16,7 +16,10 @@ Il progetto prevede la creazione di REST API utilizzando Node.js per gestire gli
 - HTML e CSS
 
 ---
-## Cofigurazione 🛠️
+## Configurazione 🛠️
+1. Installazione di Node.js: visitare il [sito ufficiale](https://nodejs.org/en) con la guida passo passo.
+2. Dopo aver eseguito il comando per creare un file *package.json* potrete installare Express: ```npm i express --save``` (per Windows). Anche qui vi rimando al [sito ufficiale](https://expressjs.com/en/starter/installing.html) per l'installazione.
+3. Se si intende creare un database in MySQL, è necessario scaricare prima MySQL, o nel mio caso Beekeeper Studio, e da lì costruirvi le tabelle con i dati. Dopodichè installate il pacchetto ```npm i mysql2 --save``` e ```npm i sequelize --save```. Inoltre utilizzando un database dovrete raccogliere le credenziali e le password in un file *.env*, perciò è necessario scaricare ```dotenv``` per gestire le variabili d'ambiente.
 
 ---
 ## Struttura del progetto 🗂️
