@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./icons/favicon_io/favicon.ico">
+    <title>Orizon Agenzia Viaggi | Espandi i tuoi orizzonti</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Archivo+Black&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="header">
+      <h1>Orizon</h1>
+      <span style="text-align: center; margin: 1.5rem auto;">Un progetto API JSON RESTful Node.js</span>
+    </div>
+
+    <div class="main">
+      <div class="mainBtn"> <!--width: 60%-->
+        <button id="usersBtn" type="button" class="btn">Users</button>
+        <button id="productsBtn" type="button" class="btn">Products</button>
+        <button id="ordersBtn" type="button" class="btn">Orders</button>
+      </div>
+
+      <!--users-->
+      <div id="users">
+        <form id="userForm" style="width: auto;">
+          <div class="containerBtn">
+            <div class="inputBox">
+              <label for="firstname">Nome</label>
+              <input type="text" id="firstname" name="firstname" required/>
+            </div>
+            <div class="inputBox">
+              <label for="lastname">Cognome</label>
+              <input type="text" id="lastname" name="lastname" required/>
+            </div>
+            <div class="inputBox">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required/>
+            </div>
+          </div>
+
+          <div class="containerBtn" style="width: 100%; margin: 1rem 0 auto; justify-content: center;">
+            <button type="reset" class="iconBtn" style="margin: 0;"><img src="./reset.png"/></button>
+          </div>
+          <div class="containerBtn" style="width: 100%; margin: 1rem 0 auto; justify-content: center;">
+            <button type="submit" class="btn">Invio</button>
+          </div>
+        </form>
+
+        <div id="registeredUsers"></div>
+      </div>
+
+      <!--products-->
+      <div id="products">
+        <div id="filters" class="containerBtn">
+          <h4>Filtri di ricerca:</h4>
+          <div class="inputBox">
+            <label for="destinationFilter">Destinazione</label>
+            <select name="destinationFilter" id="destinationFilter">
+              <option value="">Tutto</option>
+              <option value="Europa">Europa</option>
+              <option value="Nord America">Nord America</option>
+              <option value="America Latina">America Latina</option>
+              <option value="Oceania">Oceania</option>
+              <option value="Asia">Asia</option>
+              <option value="Sud Est Asiatico">Sud Est Asiatico</option>
+              <option value="Medio Oriente">Medio Oriente</option>
+              <option value="Africa">Africa</option>
+            </select>
+          </div>
+          <div class="inputBox">
+            <label for="budgetFilter">Budget</label>
+            <select name="budgetFilter" id="budgetFilter">
+              <option value="">Tutto</option>
+              <option>Meno di 500€</option>
+              <option>501€ - 1000€</option>
+              <option>1001€ - 1500€</option>
+              <option>1501€ - 2000€</option>
+              <option>2001€ - 3000€</option>
+              <option>Più di 3001€</option>
+            </select>
+          </div>
+          <div>
+            <label for="guideFilter">Local guide:</label>
+            <input type="checkbox" id="guideFilter" name="guideFilter"/>
+          </div>
+          
+          <button type="button" style="margin: 0;" class="iconBtn" id="toggleFilter"><img src="./icons/arrow.png"/></button>        
+        </div>
+
+        <div class="formContainer">
+          <div class="containerBtn" style="justify-content: center;">
+            <h4>Inserisci un nuovo prodotto</h4>
+            <button type="button" class="iconBtn" id="toggleProductForm">
+              <img src="./icons/arrow-down.png" id="toggleIconForm"/>
+            </button>
+          </div>
+
+          <form id="productForm" style="display: none;">
+            <div class="containerBtn inputsProductForm">
+
+              <div class="inputBox" style="margin: 0.5rem 0;">
+                <div class="inputBox">
+                  <label for="name">Titolo</label>
+                  <input type="text" id="name" name="name" required/>
+                </div>
+                <div class="inputBox">
+                  <label for="destination">Destinazione</label>
+                  <select id="destination" name="destination" required>
+                    <option value="Europa">Europa</option>
+                    <option value="Nord America">Nord America</option>
+                    <option value="America Latina">America Latina</option>
+                    <option value="Oceania">Oceania</option>
+                    <option value="Asia">Asia</option>
+                    <option value="Sud Est Asiatico">Sud Est Asiatico</option>
+                    <option value="Medio Oriente">Medio Oriente</option>
+                    <option value="Africa">Africa</option>
+                  </select>
+                </div>
+                <div class="inputBox">
+                  <label for="description">Descrizione</label>
+                  <textarea id="description" name="description"></textarea>
+                </div>
+                <div class="inputBox"> 
+                  <label for="image" style="display: flex; flex-direction: row; align-items: center; flex-wrap: wrap;">
+                    Carica immagine<img src="./icons/image.png" alt="Image" class="customFile"/>
+                  </label>
+                  <input type="file" id="image" name="image" accept="image/png, image/jpeg, image/jpg"/>
+                </div>
+                <div class="inputBox">
+                  <label for="price">Prezzo</label>
+                  <input type="number" id="price" name="price" required/>€
+                </div>
+                <div class="inputBox">
+                  <label for="localGuide">Guida locale:</label>
+                  <input type="checkbox" id="localGuide" name="localGuide"/>
+                </div>
+              </div>
+
+              <div class="inputBox" style="margin: 0.5rem 0; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+                <label>Tipologia di viaggio: indica lo score in %</label>
+                  <div class="scoreInput">
+                    <label for="scoreNature">Natura e avventura</label>
+                    <input type="number" id="scoreNature" name="scoreNature" min="0" max="100" step="10"/>
+                  </div>
+                  <div class="scoreInput">
+                    <label for="scoreRelax">Chill & Relax</label>
+                    <input type="number" id="scoreRelax" name="scoreRelax" min="0" max="100" step="10"/>
+                  </div>
+                  <div class="scoreInput">
+                    <label for="scoreParty">Party e movida</label>
+                    <input type="number" id="scoreParty" name="scoreParty" min="0" max="100" step="10"/>
+                  </div>
+                  <div class="scoreInput">
+                    <label for="scoreHistory">Monumenti e siti storici</label>
+                    <input type="number" id="scoreHistory" name="scoreHistory" min="0" max="100" step="10"/>
+                  </div>
+                  <div class="scoreInput">
+                    <label for="scoreCity">Città e cultura</label>
+                    <input type="number" id="scoreCity" name="scoreCity" min="0" max="100" step="10"/>
+                  </div>
+              </div>         
+            </div>
+
+            <div class="containerBtn" style="margin: 0.3rem 0 auto; justify-content: center;">
+              <button type="reset" class="iconBtn" style="margin: 0;"><img src="./reset.png"/></button>
+            </div>
+            <div class="containerBtn" style="margin: 2rem 0 auto; justify-content: center;">
+              <button type="submit" class="btn">Invio</button>
+            </div>
+          </form>
+        </div>
+
+        <div id="registeredProducts"></div>
+      </div>
+
+      <!--orders-->
+      <div id="orders">
+        <form id="orderForm" style="width: auto;">
+          <div class="containerBtn">
+            <div class="inputBox">
+              <label for="firstname">Nome</label>
+              <input type="text" id="firstname" name="firstname" required/>
+            </div>
+            <div class="inputBox">
+              <label for="lastname">Cognome</label>
+              <input type="text" id="lastname" name="lastname" required/>
+            </div>
+            <div class="inputBox">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required/>
+            </div>
+          </div>
+
+          <div class="containerBtn">
+            <div class="inputBox">
+              <label for="ordername">Nome pacchetto</label>
+              <input type="text" id="ordername" name="ordername" required/>
+            </div>
+            <div class="inputBox">
+              <label for="number">Numero ordine</label>
+              <input type="text" id="number" name="number" required/>
+            </div>
+            <div class="inputBox">
+              <label for="quantity">Quantità</label>
+              <input type="number" id="quantity" name="quantity" required/>
+            </div>
+          </div>
+
+          <div class="containerBtn" style="width: 100%; margin: 1rem 0 auto; justify-content: center;">
+            <button type="reset" class="iconBtn" style="margin: 0;"><img src="./reset.png"/></button>
+          </div>
+          <div class="containerBtn" style="width: 100%; margin: 1rem 0 auto; justify-content: center;">
+            <button type="submit" class="btn">Invio</button>
+          </div>
+        </form>
+
+        <div id="registeredOrders"></div>
+      </div>
+    </div>
+
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,291 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    font-family: 'Alata', sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    color: rgb(74, 74, 74);
+    background: rgb(255, 255, 255);
+    margin: 2rem;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mainBtn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    margin: 2rem 0;
+}
+.containerBtn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+#users, #products, #orders{
+    display: none;
+    height: max-content;
+    /*width: 80%;
+    margin: 2rem 0;*/
+}
+#products, #users{
+    width: 100%;
+    margin: 2rem;
+}
+#filters{
+    /*flex-wrap: wrap;*/
+    justify-content: space-evenly; 
+    background: rgba(74,74,74,0.1); 
+    border-radius: 10px; 
+    padding: 0.5rem;
+}
+#registeredProducts{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+}
+.productDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+    margin: 1.5rem 0.5rem;
+    padding: 1.5rem;
+    border: 2px solid rgb(74, 74, 74);
+    border-radius: 10px;
+}
+.pic{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position:center;
+    margin: 0.8rem 0;
+}
+.productDiv p{
+    text-align: justify;
+}
+.scoreDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.scoreDiv span{
+    font-size: 0.8rem;
+}
+.scoreIcon{
+    width: 40px;
+}
+.popup {
+    position: absolute;
+    bottom: 110%;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid rgba(74, 74, 74, 0.6);
+    color: rgba(74, 74, 74, 0.6);
+    padding: 0.3rem;
+    z-index: 10;
+    font-size: 0.6rem;
+}
+.price{
+    font-size: 1.5rem;
+    color: rgb(255, 159, 68);
+    font-weight: 700;
+}
+.userDiv{
+    margin: 1rem 0;
+}
+#productForm{
+    margin: 1rem 0;
+}
+#userForm, .formContainer{ /*#productForm*/
+    /*width: 100%;*/
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+    background: rgba(74,74,74,0.1); 
+    border-radius: 10px; 
+    padding: 0.5rem;
+}
+.inputsProductForm{
+    align-items: start; 
+    width: 70%;
+    max-width: 100%; 
+    margin: 0 auto; 
+    flex-wrap: wrap;
+}
+/*.flexcol{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}*/
+.inputBox{
+    margin: 0.3rem 0;
+}
+.inputBox input, .inputBox textarea, .customFile, select{
+    background: transparent;
+    border: 2px solid rgb(255, 159, 68);
+    color: rgb(121, 168, 255);
+    border-radius: 10px;
+    padding: 5px 10px;
+    outline: none;
+    font-family: 'Alata', sans-serif;
+}
+.inputBox input[type='number']{
+    width: 70px;
+}
+.inputBox input[type='file']{
+    display: none;
+}
+.customFile {
+    cursor: pointer;
+    width: 30px;
+}
+.inputBox textarea{
+    resize:none;
+    overflow:auto;
+    width: 200px;
+    height: 100px;
+}
+.inputBox textarea::-webkit-scrollbar-track {
+    background: transparent;
+}
+.inputBox textarea::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+.inputBox label[for='description']{
+    display: block;
+}
+.inputBox input:focus, .inputBox textarea:focus, select:focus{
+    border-color: rgb(121, 168, 255);
+    caret-color: rgb(121, 168, 255);
+}
+.scoreInput{
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center; 
+    flex-wrap: wrap;
+    margin: 0.3rem 0;
+}
+h1{
+    background: -webkit-linear-gradient(rgb(255, 159, 68), rgb(121, 168, 255));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Archivo Black', serif;
+    font-weight: 600;
+    line-height: 1;
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    text-align:center;
+}
+h3{
+    font-size: 1.5rem;
+    text-align:justify;
+    color: rgb(74, 74, 74);
+}
+span{
+    /*text-align: center;
+    width: 60%;*/
+    font-size: 1rem;
+    color: rgba(74, 74, 74, 0.6);
+}
+button{
+    font-family: 'Alata', sans-serif;
+    color: rgb(74, 74, 74);
+    cursor: pointer;
+}
+.icon{
+    margin-left: 0.3rem;
+    width: 25px;
+    transform: translateY(3px);
+}
+.iconBtn{
+    background: transparent;
+    border: none;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+.iconBtn img{
+    width: 20px;
+}
+.iconBtn:hover{
+    transform: scale(0.8);
+}
+.btn{
+    background: transparent;
+    border: 2px solid rgb(255, 159, 68);
+    color: rgb(255, 159, 68);
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 1.3rem;
+}
+.btn:hover{
+    color: rgb(121, 168, 255);
+    outline-offset: 3px ;
+    outline-color: rgb(121, 168, 255);
+    outline-style: solid;
+    outline-width: 2px;
+}
+@media (max-width: 1026px){
+    .inputsProductForm{
+        width: 80%;
+    }
+    #userForm{
+        width: 100%;
+    }
+}
+@media (max-width: 768px){
+    .mainBtn{
+        width: 80%;
+    }
+    #filters{
+        flex-direction: column;
+    }
+    #filters .inputBox{
+        text-align: center;
+    }
+    #filters h4{
+        margin-bottom: 1.5rem;
+    }
+    #filters button{
+        margin-top: 1.5rem !important;
+        margin-left: 0;
+    }
+    #userForm .containerBtn{
+        flex-direction: column;
+    }
+}
+@media (max-width: 480px){
+    .header h1{
+        font-size: 3.5rem;
+    }
+    .mainBtn{
+        flex-direction: column;
+        height: 160px;
+    }
+    .scoreInput{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .inputBox textarea{
+        width: fit-content;
+    }
+}
