@@ -44,7 +44,7 @@ body{
     /*width: 80%;
     margin: 2rem 0;*/
 }
-#products, #users{
+#products, #users, #orders{
     width: 100%;
     margin: 2rem;
 }
@@ -55,7 +55,7 @@ body{
     border-radius: 10px; 
     padding: 0.5rem;
 }
-#registeredProducts{
+#registeredProducts, #registeredOrders{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -70,6 +70,26 @@ body{
     padding: 1.5rem;
     border: 2px solid rgb(74, 74, 74);
     border-radius: 10px;
+}
+.orderDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 500px;
+    margin: 1.5rem 0.5rem;
+    padding: 1.5rem;
+    border: 2px solid rgb(74, 74, 74);
+    border-radius: 10px;
+}
+.orderInfo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.productList{
+    display: flex;
+    flex-direction: column;
 }
 .pic{
     width: 100%;
@@ -115,7 +135,7 @@ body{
 #productForm{
     margin: 1rem 0;
 }
-#userForm, .formContainer{ /*#productForm*/
+#userForm, .formContainer, #orderForm{ /*#productForm*/
     /*width: 100%;*/
     display: flex;
     flex-direction: column;
@@ -244,6 +264,11 @@ button{
     outline-style: solid;
     outline-width: 2px;
 }
+@media (max-width: 1215px){
+    .orderDiv{
+        width: 400px;
+    }
+}
 @media (max-width: 1026px){
     .inputsProductForm{
         width: 80%;
@@ -272,6 +297,9 @@ button{
     #userForm .containerBtn{
         flex-direction: column;
     }
+    .orderDiv{
+        width: 100%;
+    }
 }
 @media (max-width: 480px){
     .header h1{
@@ -287,5 +315,8 @@ button{
     }
     .inputBox textarea{
         width: fit-content;
+    }
+    .orderInfo{
+        flex-direction: column;
     }
 }
